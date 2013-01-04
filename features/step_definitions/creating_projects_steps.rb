@@ -15,5 +15,9 @@ When /^I press "(.*?)"$/ do |button|
 end
 
 Then /^I should see "(.*?)"$/ do |message|
-  page.has_content?(message)
+  page.should have_content(message)
+end
+
+Then /^I should be on the project page for "(.*?)"$/ do |project_name|
+  visit project_path(Project.find_by_name!(project_name))
 end

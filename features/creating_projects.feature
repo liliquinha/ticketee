@@ -10,3 +10,5 @@ Feature: Creating projects
 	And I fill in "Nome" with "Beauty Community"
 	And I press "Criar Projeto"
 	Then I should see "Projeto foi criado!"
+	And I should be on the project page for "Beauty Community"
+	And I should see "Beauty Community"
