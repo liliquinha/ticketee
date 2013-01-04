@@ -2,8 +2,8 @@ Given /^I am on the homepage$/ do
   visit root_url
 end
 
-When /^I follow "(.*?)"$/ do |arg1|
-  click_link "Novo Projeto"
+When /^I follow "(.*?)"$/ do |link|
+  click_link link
 end
 
 When /^I fill in "(.*?)" with "(.*?)"$/ do |field, text|
