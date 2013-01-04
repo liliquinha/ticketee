@@ -2,5 +2,10 @@
 
 <%= @project.name %> <%= link_to "Editar Projeto", edit_project_path(@project) %> |
 <%= link_to "Delete", @project, method: :delete, confirm: "Are you sure?" %><br/>
+<ul>
+	<% @project.tickets.each do |ticket| %>
+	<li>#<%=  ticket.id %> - <%= link_to ticket.title, [@project, ticket] %></li>
+	<% end %>
+</ul>
 
  <%= link_to "Novo Ticket", new_project_ticket_path(@project) %>
