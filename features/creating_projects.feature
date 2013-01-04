@@ -4,11 +4,18 @@ Feature: Creating projects
 	As a user
 	I want to create them very easily
 	
-	Scenario: Creating a project
+	Background:
 	Given I am on the homepage
 	When I follow "Novo Projeto"
+	
+	Scenario: Creating a project
 	And I fill in "Nome" with "Beauty Community"
 	And I press "Criar Projeto"
 	Then I should see "Projeto foi criado!"
 	And I should be on the project page for "Beauty Community"
 	And I should see "Beauty Community"
+	
+	Scenario: Creating a project without a name
+	  And I press "Criar Projeto"
+	  Then I should see "Projeto nao foi criado."
+	  And I should see "Name can't be blank"
