@@ -1,5 +1,5 @@
 <div id='ticket'>
 	<h2><%= @ticket.title %></h2>
-	
+			<%= link_to "Editar", [:edit, @project, @ticket] %>
 	<%= simple_format(@ticket.description) %>
 </div>
