@@ -1,9 +1,13 @@
 <h2>Projetos</h2>
 
+<nav>
+<%= link_to "Novo Projeto", new_project_path %>
+</nav>
+
 <ul>
 <% @projects.each do |project| %>
 	<li><%= link_to project.name, project %></li>	
 <% end %>
 </ul>
 
-<%= link_to "Novo Projeto", new_project_path %>
+<%= link_to "Cadastrar-se", new_user_registration_path %>
