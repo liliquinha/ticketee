@@ -23,6 +23,11 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem "letter_opener"
+end
+
+
 group :test, :development do
   gem 'rspec-rails'
 end
@@ -32,6 +37,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl', '1.3.3'
+  gem 'email_spec'
 end
 
   gem 'devise'
