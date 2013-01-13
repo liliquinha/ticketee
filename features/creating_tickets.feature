@@ -14,6 +14,7 @@ Feature: Creating tickets
 	And I fill in "Descricao" with "Pessoas nao conseguem entrar na comunidade"
 	And I press "Create Ticket"
 	Then I should see "Ticket foi criado."
+	And I should see "Ticket criado por user@ticketee.com"
 	
 	Scenario: Creating a ticket without valid attributes
 	And I fill in "Titulo" with ""
