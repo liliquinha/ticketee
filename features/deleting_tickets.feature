@@ -4,8 +4,12 @@ Feature: Deleting tickets
   I want to press a button and make them disappear
 
   Background:
-	Given there is a project called "Skype for interests"
-	And that project has a ticket:
+	Given there are the following users:
+		|email            |password|
+		|user@ticketee.com|password|
+	And I am signed in as them
+	And there is a project called "Skype for interests"
+	And "user@ticketee.com" has created a ticket for this project:
 		|title                   |description                             |
 		|make it cooler          |add random chat with previous info      |
 	Given I am on the homepage

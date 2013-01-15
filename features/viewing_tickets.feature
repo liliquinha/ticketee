@@ -4,15 +4,18 @@ Feature: Viewing tickets
 	I want to see them on that project's page
 	
 	Background:
-	Given there is a project called "TextMate 2"
-	And that project has a ticket:
+	Given there are the following users:
+		|email            |password|
+		|user@ticketee.com|password|
+	And there is a project called "TextMate 2"
+	And "user@ticketee.com" has created a ticket for this project:
 		|title              |description                       |
-		|Make it shiny!     |Gradients, starbursts             |    
+		|Make it shiny!     |Gradients, starbursts             | 
 		|Add auto-completion|auto-completion is a must nowadays| 
 	And there is a project called "Travel community"
-	And that project has a ticket:
+	And "user@ticketee.com" has created a ticket for this project:
 		|title                                  |description                                        |
-		|Add traveller friend auto-matching     |People like to have a backup company               |    
+		|Add traveller friend auto-matching     |People like to have a backup company               | 
 		|Add chat                               |when you re travelling alone is cool to have a chat|
 	When I am on the homepage
 	
