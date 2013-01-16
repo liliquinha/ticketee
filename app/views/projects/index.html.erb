@@ -1,7 +1,9 @@
 <h2>Projetos</h2>
 
 <nav>
-<%= link_to "Novo Projeto", new_project_path %>
+	<%= admins_only do %>
+		<%= link_to "Novo Projeto", new_project_path %>
+	<% end %>
 </nav>
 
 <ul>
