@@ -5,6 +5,10 @@ Feature: Creating projects
 	I want to create them very easily
 	
 	Background:
+	Given there are the following users:
+		|email            |password|admin |
+		|user@ticketee.com|password|true  |
+	And I am signed in as them
 	Given I am on the homepage
 	When I follow "Novo Projeto"
 	
