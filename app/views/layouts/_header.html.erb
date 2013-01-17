@@ -1,4 +1,8 @@
 <nav>
+	<%= admins_only do %>
+		<%= link_to "Admin", admin_root_path %>
+	<% end %>
+	
 	<% if user_signed_in? %> <!--method provided by devise -->
 		Ola, <%= current_user.email %> <!--method provided by devise -->
 	<% else %>
