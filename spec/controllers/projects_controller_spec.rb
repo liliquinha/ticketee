@@ -7,6 +7,7 @@ describe ProjectsController do
   let(:project) { Factory(:project) }
   
   it "displays an error for a missing project" do
+    sign_in(user)
     get :show, id: "not-here"
     response.should redirect_to(projects_path)
     flash[:alert].should == "Esta pagina nao existe"
@@ -19,6 +20,13 @@ describe ProjectsController do
         send(method, action.dup, id: project.id)
         response.should redirect_to(root_url)
         flash[:alert].should eql("You must be an admin to do that.")
+      end
+      
+      it "cannot access the show action" do
+        sign_in (user)
+        get :show, id: project.id
+        response.should redirect_to(projects_path)
+        flash[:alert].should eql("Esta pagina nao existe")
       end
     end
   end

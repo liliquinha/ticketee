@@ -30,6 +30,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'rspec', "~> 2.12.0"
 end
 
 group :test do
@@ -42,6 +43,7 @@ end
 
   gem 'devise'
 
+  gem 'rake'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

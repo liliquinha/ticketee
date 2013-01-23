@@ -9,6 +9,7 @@ Feature: Deleting tickets
 		|user@ticketee.com|password|
 	And I am signed in as them
 	And there is a project called "Skype for interests"
+	And "user@ticketee.com" can view the "Skype for interests" project
 	And "user@ticketee.com" has created a ticket for this project:
 		|title                   |description                             |
 		|make it cooler          |add random chat with previous info      |

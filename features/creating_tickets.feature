@@ -8,14 +8,11 @@ Feature: Creating tickets
 	And there are the following users:
 	|email|password|
 	|user@ticketee.com|password|
+	And "user@ticketee.com" can view the "Movies" project
+	And I am signed in as them
 	And I am on the homepage
 	When I follow "Movies"
 	And I follow "Novo Ticket"
-	Then I should see "You need to sign in or sign up before continuing."
-	And I fill in "Email" with "user@ticketee.com"
-	And I fill in "Senha" with "password"
-	And I press "Sign in"
-	Then I should see "Novo Ticket"
 	
 	Scenario: Creating a ticket
 	And I fill in "Titulo" with "Problemas na criacao de comunidades"
