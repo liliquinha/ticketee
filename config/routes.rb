@@ -1,11 +1,14 @@
 Ticketee::Application.routes.draw do
   
-
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations"}
 
   resources :projects do
     resources :tickets
   end
+  
+  get '/awaiting_confirmation',
+    :to => "users#confirmation",
+    :as => 'confirm_user'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

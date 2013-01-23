@@ -10,7 +10,7 @@ Feature: Signing up
 		And I fill in "Password" with "12345678"
 		And I fill in "Confirmation" with "12345678"	
 		And I press "Sign up"
-		Then I should see "Sign in"
+		Then I should see "Please confirm your account before signing in."
 		
 	Scenario: Signing in via confirmation	
 		Given there are the following users:
