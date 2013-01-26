@@ -12,4 +12,6 @@
 	<% end %>
 </ul>
 
+<%= authorized?("create tickets".to_sym, @project) do %>
  <%= link_to "Novo Ticket", new_project_ticket_path(@project) %>
+<% end %>
