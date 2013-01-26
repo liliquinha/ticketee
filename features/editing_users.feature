@@ -25,7 +25,7 @@ Feature: Editing a user
         And I should not see "user@ticketee.com"
 
      Scenario: Toggling a user's admin ability
-        When I check "Is an admin?"
+        When I check "Admin?"
         And I press "Update User"
         Then I should see "User has been updated."
         And I should see "user@ticketee.com (Admin)"

@@ -26,7 +26,7 @@ Feature: Creating Users
 		Scenario: Creating an admin user
 		     When I fill in "Email" with "newadmin@ticketee.com"
 	        And I fill in "Password" with "password"
-	        And I check "Is an admin?"
+	        And I check "Admin?"
 	        And I press "Create User"
 	        Then I should see "User has been created"
 	        And I should see "newadmin@ticketee.com (Admin)"

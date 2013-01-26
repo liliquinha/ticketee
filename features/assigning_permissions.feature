@@ -11,6 +11,10 @@ Background:
 		|user@ticketee.com|password|
 	And there is a project called "TextMate 2"
 	
+	And "user@ticketee.com" has created a ticket for this project:
+	   | title  | description       |
+       | Shiny! | Eye-blindingly so |
+	
 	When I follow "Admin"
 	And I follow "Users"
 	And I follow "user@ticketee.com"
@@ -23,3 +27,43 @@ Scenario: Viewing a project
 	
 	Given I am signed in as "user@ticketee.com"
 	Then I should see "TextMate 2"
+	
+	Scenario: Creating tickets for a project
+	  When I check "View" for "TextMate 2"
+	  When I check "Create tickets" for "TextMate 2"
+	  And I press "Update"
+	  And I follow "Sign out"
+	
+	  Given I am signed in as "user@ticketee.com"
+	  When I follow "TextMate 2"
+	  And I follow "Novo Ticket"
+	  And I fill in "Titulo" with "Shiny!"
+	  And I fill in "Descricao" with "Make it so!"
+	  And I press "Create"
+	  Then I should see "Ticket foi criado."
+	
+	Scenario: Updating a ticket for a project
+	  When I check "View" for "TextMate 2"
+      And I check "Edit tickets" for "TextMate 2"
+      And I press "Update"
+      And I follow "Sign out"
+
+      Given I am signed in as "user@ticketee.com"
+      When I follow "TextMate 2"
+      And I follow "Shiny!"
+      And I follow "Edit"
+      And I fill in "Titulo" with "Really shiny!"
+      And I press "Update Ticket"
+      Then I should see "Ticket foi editado com sucesso"
+
+	Scenario: Deleting a ticket for a project
+     When I check "View" for "TextMate 2"
+     And I check "Delete tickets" for "TextMate 2"
+     And I press "Update"
+     And I follow "Sign out"
+
+     Given I am signed in as "user@ticketee.com"
+     When I follow "TextMate 2"
+     And I follow "Shiny!"
+     And I follow "Delete"
+     Then I should see "Ticket foi removido"

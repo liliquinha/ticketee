@@ -19,7 +19,7 @@ Feature: Deleting tickets
 	And I follow "make it cooler"
 
  	Scenario: Deleting a ticket
- 	  When I follow "Apagar"
+ 	  When I follow "Delete"
  	  Then I should see "Ticket foi removido"
 	  And I should be on the project page for "Skype for interests"
  	

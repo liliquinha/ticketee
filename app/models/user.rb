@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
          :confirmable
          
   has_many :permissions
+  
+  has_many :tickets
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
