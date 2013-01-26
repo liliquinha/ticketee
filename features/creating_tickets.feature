@@ -9,6 +9,7 @@ Feature: Creating tickets
 	|email|password|
 	|user@ticketee.com|password|
 	And "user@ticketee.com" can view the "Movies" project
+	And "user@ticketee.com" can create tickets in the "Movies" project
 	And I am signed in as them
 	And I am on the homepage
 	When I follow "Movies"

@@ -42,6 +42,7 @@ group :test do
 end
 
   gem 'devise'
+  gem 'cancan'
 
   gem 'rake'
 # To use ActiveModel has_secure_password
