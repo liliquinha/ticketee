@@ -9,6 +9,18 @@ Ticketee::Application.routes.draw do
   get '/awaiting_confirmation',
     :to => "users#confirmation",
     :as => 'confirm_user'
+    
+  put 'admin/users/:user_id/permissions',
+    :to => "admin/permissions#update",
+    :as => :update_user_permissions
+
+    namespace :admin do
+      root to: "base#index"
+      resources :users do
+        resources :permissions
+      end
+    end 
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -66,8 +78,5 @@ Ticketee::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   
-  namespace :admin do
-    root to: "base#index"
-    resources :users
-  end
+
 end

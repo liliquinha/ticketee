@@ -1,10 +1,10 @@
 <nav>
 	<%= admins_only do %>
-		<%= link_to "Admin", admin_root_path %>
+		<%= link_to "Admin", admin_root_path %><br/>
 	<% end %>
 	
 	<% if user_signed_in? %> <!--method provided by devise -->
-		Ola, <%= current_user.email %> <!--method provided by devise -->
+		Ola, <%= current_user.email %> | <%= link_to "Sign out", destroy_user_session_path, method: :delete %> <!--methods provided by devise -->
 	<% else %>
 		<%= link_to "Cadastrar-se", new_user_registration_path %> |
 		<%= link_to "Entrar", new_user_session_path %>
