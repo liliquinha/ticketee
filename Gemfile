@@ -43,6 +43,8 @@ end
 
   gem 'devise'
   gem 'cancan'
+  
+  gem 'paperclip'
 
   gem 'rake'
 # To use ActiveModel has_secure_password

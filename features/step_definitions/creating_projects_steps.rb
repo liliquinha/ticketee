@@ -14,7 +14,7 @@ When /^I press "(.*?)"$/ do |button|
   click_button button
 end
 
-Then /^I should see "(.*?)"$/ do |message|
+Then /^I should see "([^\"]*)"$/ do |message|
   page.should have_content(message)
 end
 
@@ -22,6 +22,6 @@ Then /^I should be on the project page for "(.*?)"$/ do |project_name|
   visit project_path(Project.find_by_name!(project_name))
 end
 
-When /^I check "(\S*)"$/ do |option|
+When /^I check "([^\"]*)"$/ do |option|
   check(option)
 end

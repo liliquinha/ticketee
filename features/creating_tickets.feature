@@ -34,3 +34,11 @@ Feature: Creating tickets
 	And I fill in "Descricao" with "it sucks"
 	And I press "Create Ticket"
 	Then I should see "Description is too short"
+	
+	Scenario: Creating a ticket with an attachment
+	When I fill in "Titulo" with "Add documentation for blink tag"
+	And I fill in "Descricao" with "The blink tag has an attribute for speed"
+	And I attach the file "spec/fixtures/speed.txt" to "File"
+	And I press "Create Ticket"
+	Then I should see "Ticket foi criado."
+	And I should see "speed.txt" within "#ticket .asset"
