@@ -38,7 +38,11 @@ Feature: Creating tickets
 	Scenario: Creating a ticket with an attachment
 	When I fill in "Titulo" with "Add documentation for blink tag"
 	And I fill in "Descricao" with "The blink tag has an attribute for speed"
-	And I attach the file "spec/fixtures/speed.txt" to "File"
+	And I attach the file "spec/fixtures/speed.txt" to "File #1"
+	And I attach the file "spec/fixtures/spin.txt" to "File #2"
+	And I attach the file "spec/fixtures/gint.txt" to "File #3"
 	And I press "Create Ticket"
 	Then I should see "Ticket foi criado."
-	And I should see "speed.txt" within "#ticket .asset"
+	And I should see "speed.txt" within "#ticket .assets"
+	And I should see "spin.txt" within "#ticket .assets"
+	And I should see "gint.txt" within "#ticket .assets"

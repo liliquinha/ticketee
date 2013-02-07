@@ -9,6 +9,7 @@ class TicketsController < ApplicationController
   
   def new # com cucumber gera o método e ja coloca o codigo settando as variaveis de instancia
     @ticket = @project.tickets.build
+    3.times {@ticket.assets.build}
   end
   
   def create
